@@ -4,9 +4,110 @@
   box-sizing: border-box;
 }
 
+body {
+  background: #333333;
+  font-size: 62.5%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login Page styling */
+.login-form {
+  background: #111111;
+  color: #eeeeee;
+  padding: 3rem 3rem;
+}
+
+.login-form h1 {
+  margin: 0;
+  padding: 0 0 2rem;
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+.login-form p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.login-form input {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.login-form input[type="text"],
+input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #eeeeee;
+  background: transparent;
+  outline: none;
+  height: 2.5rem;
+  color: #eeeeee;
+  font-size: 1.4rem;
+}
+
+.login-form input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 3rem;
+  background: #fb2525;
+  color: #eeeeee;
+  font-size: 1.8rem;
+  border-radius: 1.25rem;
+}
+
+.login-form input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.login-form a {
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #777777;
+}
+
+.login-form .sign-up-link {
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.login-content-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./img/login-content-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-content {
+  color: #eeeeee;
+  text-align: center;
+}
+
+.login-content h1 {
+  font-size: 3.6rem;
+}
+
+.login-content p {
+  font-size: 1.4rem;
+}
+
 /* Mobile layout */
 [class*="col-"] {
   width: 100%;
+  float: left;
+}
+
+.login-content-container {
+  visibility: hidden;
 }
 
 /* Tablet layout */
@@ -58,10 +159,20 @@
   .col-md-12 {
     width: 100%;
   }
+
+  .login-container {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .login-content-container {
+    width: 0;
+    height: 0;
+  }
 }
 
 /* Desktop layout */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1259px) {
   .col-lg-1 {
     width: calc(100% / 12);
   }
@@ -108,5 +219,14 @@
 
   .col-lg-12 {
     width: 100%;
+  }
+
+  .login-container {
+    height: 100vh;
+  }
+
+  .login-content-container {
+    visibility: visible;
+    height: 100vh;
   }
 }
