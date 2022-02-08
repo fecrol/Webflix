@@ -92,12 +92,24 @@ input[type="password"] {
   text-align: center;
 }
 
+.logo-lg {
+  max-width: 100%;
+  max-height: auto;
+  padding: 1rem;
+}
+
 .login-content h1 {
   font-size: 3.6rem;
 }
 
 .login-content p {
   font-size: 1.4rem;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 /* Mobile layout */
@@ -108,6 +120,8 @@ input[type="password"] {
 
 .login-content-container {
   visibility: hidden;
+  width: 0;
+  height: 0;
 }
 
 /* Tablet layout */
@@ -172,7 +186,7 @@ input[type="password"] {
 }
 
 /* Desktop layout */
-@media only screen and (min-width: 1259px) {
+@media only screen and (min-width: 1100px) {
   .col-lg-1 {
     width: calc(100% / 12);
   }
