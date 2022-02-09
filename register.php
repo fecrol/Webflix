@@ -31,7 +31,7 @@
                     <p>Repeat Password</p>
                     <input type="password" name="password2" placeholder="Enter Password">
                     <input type="submit" name="" value="Register">
-                    <p class="sign-up-link">Already have an account? <a href="#">Sign in here</a></p>
+                    <p class="sign-up-link">Already have an account? <a href="login.php">Sign in here</a></p>
                 </form>
             </div>
         </div>
