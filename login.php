@@ -11,14 +11,8 @@
     </head>
     <body>
         <div class="col-lg-12 col-md-12">
-            <div class="login-content-container col-lg-6 center">
-                <div class="login-content col-lg-8">
-                    <img src="./img/logo.png" alt="Webflix logo" class="logo-lg">
-                    <h1>Unlimited films, TV programmes and more.</h1>
-                    <p>Whatch anywhere. Cancel at any time.</p>
-                    <p>Ready to watch?</p>
-                </div>
-            </div>
+            <?php include("./html/login_content.html") ?>
+            
             <div class="login-container col-lg-6 col-md-12 center">
                 <div class="row center col-lg-12">
                     <div class="login-logo col-md-8">
