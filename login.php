@@ -20,7 +20,11 @@
                 </div>
             </div>
             <div class="login-container col-lg-6 col-md-12 center">
-                <div class="login-form col-lg-8 col-md-8">
+                <div class="row center col-lg-12">
+                    <div class="login-logo col-md-8">
+                        <img src="./img/logo.png" alt="Webflix logo" class="logo-lg">
+                    </div>
+                    <div class="login-form col-lg-8 col-md-8">
                     <h1>Login</h1>
                     <form action="">
                         <p>Email</p>
@@ -32,6 +36,7 @@
                         <br>
                         <p class="sign-up-link">New to Webflix? <a href="#">Sign up now</a></p>
                     </form>
+                </div>
                 </div>
             </div>
         </div>
