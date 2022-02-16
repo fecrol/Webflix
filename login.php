@@ -19,7 +19,7 @@
                     </div>
                     <div class="login-form col-lg-8 col-md-8">
                     <h1>Login</h1>
-                    <form action="">
+                    <form action="post">
                         <p>Email</p>
                         <input type="text" name="email" placeholder="Enter Email">
                         <p>Password</p>
