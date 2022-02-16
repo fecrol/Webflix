@@ -12,7 +12,6 @@
     <body>
         <div class="col-lg-12 col-md-12">
             <?php include("./html/login_content.html") ?>
-
             <div class="login-container col-lg-6 col-md-12 center">
                 <div class="row center col-lg-12">
                     <div class="login-logo col-md-8">
