@@ -19,12 +19,12 @@
                     </div>
                     <div class="login-form col-lg-8 col-md-8">
                     <h1>Login</h1>
-                    <form action="post">
+                    <form method="post">
                         <p>Email</p>
                         <input type="text" name="email" placeholder="Enter Email">
                         <p>Password</p>
                         <input type="password" name="password" placeholder="Enter Password">
-                        <input type="submit" name="" value="Login">
+                        <input type="submit" name="submit" value="Login">
                         <a href="#">Forgotten Password?</a>
                         <br>
                         <p class="sign-up-link">New to Webflix? <a href="./register.php">Sign up now</a></p>
