@@ -30,7 +30,7 @@
                     <input type="password" name="password" placeholder="Enter Password">
                     <p>Repeat Password</p>
                     <input type="password" name="password2" placeholder="Enter Password">
-                    <input type="submit" name="" value="Register">
+                    <input type="submit" name="register" value="Register">
                     <p class="sign-up-link">Already have an account? <a href="login.php">Sign in here</a></p>
                 </form>
             </div>
