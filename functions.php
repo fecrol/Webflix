@@ -81,8 +81,15 @@ function load($page = "login.php") {
 function login() {
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
+        require("./connect_db.php");
+
         $email = $_POST["email"];
         $password = $_POST["password"];
+
+        $email = mysqli_real_escape_string($link, $email);
+        $password = mysqli_real_escape_string($link, $password);
+        
+        mysqli_close($link);
 
         $emailVal = validateEmail($email);
         $passwordVal = validatePassword($email, $password);
