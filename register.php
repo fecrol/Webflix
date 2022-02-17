@@ -19,13 +19,13 @@
             </div>
             <div class="login-form col-lg-8 col-md-8">
                 <h1>Login</h1>
-                <form action="">
+                <form action="" method="post">
                     <p>Forename</p>
                     <input type="text" name="forename" placeholder="Enter Forename">
                     <p>Surname</p>
                     <input type="text" name="surname" placeholder="Enter Surname">
                     <p>Email</p>
-                    <input type="text" name="email" placeholder="Enter Email">
+                    <input type="email" name="email" placeholder="Enter Email">
                     <p>Password</p>
                     <input type="password" name="password" placeholder="Enter Password">
                     <p>Repeat Password</p>
