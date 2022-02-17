@@ -19,7 +19,7 @@
                     </div>
                     <div class="login-form col-lg-8 col-md-8">
                     <h1>Login</h1>
-                    <form method="post">
+                    <form method="post" action="login_action.php">
                         <p>Email</p>
                         <input type="text" name="email" placeholder="Enter Email">
                         <p>Password</p>
