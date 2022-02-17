@@ -1,3 +1,8 @@
+<?php
+session_start();
+require("./functions.php")
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,7 +24,12 @@
                     </div>
                     <div class="login-form col-lg-8 col-md-8">
                     <h1>Login</h1>
-                    <form method="post" action="login_action.php">
+                    <?php
+                    if(isset($_SESSION["error"])) {
+                        include("./html/error.html");
+                    }
+                    ?>
+                    <form method="post" action="<?php login() ?>">
                         <p>Email</p>
                         <input type="text" name="email" placeholder="Enter Email">
                         <p>Password</p>
@@ -35,3 +45,7 @@
         </div>
     </body>
 </html>
+
+<?php
+unset($_SESSION["error"]);
+?>
