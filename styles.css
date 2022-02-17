@@ -51,7 +51,8 @@ body {
 }
 
 .login-form input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"] {
   border: none;
   border-bottom: 1px solid #eeeeee;
   background: transparent;
