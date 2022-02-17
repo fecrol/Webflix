@@ -96,6 +96,11 @@ function login() {
             $_SESSION["lastName"] = $userInfo["lastName"];
             load("home.php");
         }
+        else {
+            session_start();
+            $_SESSION["error"] = true;
+            load();
+        }
     }
 }
 ?>
