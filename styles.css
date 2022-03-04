@@ -15,6 +15,11 @@ body {
   align-items: center;
 }
 
+.center-register {
+  display: flex;
+  justify-content: center;
+}
+
 /* Login Page styling */
 .login-logo {
   padding: 1.5rem;
@@ -41,12 +46,10 @@ body {
 .login-form p {
   margin: 0;
   padding: 0;
-  font-weight: bold;
   font-size: 1.4rem;
 }
 
 .login-form input {
-  width: 100%;
   margin-bottom: 2rem;
 }
 
@@ -60,6 +63,39 @@ input[type="email"] {
   height: 2.5rem;
   color: #eeeeee;
   font-size: 1.4rem;
+}
+
+.login-form label {
+  display: inline-flex;
+  margin-top: 0.7rem;
+  margin-right: 2rem;
+  font-size: 1rem;
+}
+
+.login-form input[type="radio"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.custom-select {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.custom-select select {
+  border: none;
+  border-bottom: 1px solid #eeeeee;
+  background: transparent;
+  outline: none;
+  height: 2.5rem;
+  color: #eeeeee;
+  font-size: 1rem;
+}
+
+.custom-select select option {
+  background-color: #111111;
+  color: #eeeeee;
 }
 
 .login-form input[type="submit"] {
@@ -192,6 +228,7 @@ input[type="email"] {
   .login-content-container {
     width: 0;
     height: 0;
+    visibility: hidden;
   }
 }
 
@@ -247,11 +284,13 @@ input[type="email"] {
 
   .login-container {
     height: 100vh;
+    float: right;
   }
 
   .login-content-container {
     visibility: visible;
     height: 100vh;
+    position: fixed;
   }
 
   .login-logo {
