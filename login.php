@@ -31,10 +31,10 @@ require("./functions.php")
                     ?>
                     <form method="post" action="<?php login() ?>">
                         <p>Email</p>
-                        <input type="text" name="email" placeholder="Enter Email">
+                        <input class="col-lg-12 col-md-12" type="text" name="email" placeholder="Enter Email">
                         <p>Password</p>
-                        <input type="password" name="password" placeholder="Enter Password">
-                        <input type="submit" name="submit" value="Login">
+                        <input class="col-lg-12 col-md-12" type="password" name="password" placeholder="Enter Password">
+                        <input class="col-lg-12 col-md-12 "type="submit" name="submit" value="Login">
                         <a href="#">Forgotten Password?</a>
                         <br>
                         <p class="sign-up-link">New to Webflix? <a href="./register.php">Sign up now</a></p>
