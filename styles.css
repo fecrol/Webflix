@@ -158,6 +158,18 @@ input[type="email"] {
   display: table;
 }
 
+/* Change colour of google chrome autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #111111 inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #eeeeee !important;
+}
+
 /* Mobile layout */
 [class*="col-"] {
   width: 100%;
