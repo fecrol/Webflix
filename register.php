@@ -1,3 +1,7 @@
+<?php
+require("./functions.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +24,7 @@
             </div>
             <div class="login-form col-lg-8 col-md-8">
                 <h1>Register</h1>
-                <form action="" method="post">
+                <form method="post" action="<?php register(); ?>">
                     <p>Forename</p>
                     <input class="col-lg-12 col-md-12" type="text" name="forename" placeholder="Enter Forename">
                     <p>Surname</p>
@@ -33,31 +37,33 @@
                     <input class="col-lg-12 col-md-12" type="password" name="password2" placeholder="Enter Password">
                     <p>Subscription</p>
                     <label for="subscription">
-                        <input type="radio" name="subscription" checked="checked">Basic
+                        <input type="radio" name="subscription" checked="checked" value="0" onclick="hideCardDetailsForm();">Basic
                     </label>
                     <label for="subscription">
-                        <input type="radio" name="subscription">Premium (£99.99 p.a.)
+                        <input type="radio" name="subscription" value="1" onclick="showCardDetailsForm();">Premium (£99.99 p.a.)
                     </label>
-                    <p>Card Number</p>
-                    <input class="col-lg-12 col-md-12" type="text" name="card_no" placeholder="Enter Card Number">
-                    <div class="custom-select col-lg-6 col-md-6">
-                        <p>Expiry Month</p>
-                        <select id="expMonthOpt" class="col-lg-11 col-md-11">
-                            <script>
-                                fillExpiryMonths();
-                            </script>
-                        </select>
+                    <div id="card-details">
+                        <p>Card Number</p>
+                        <input class="col-lg-12 col-md-12" id="card-num" type="text" name="card_no" placeholder="Enter Card Number">
+                        <div class="custom-select col-lg-6 col-md-6">
+                            <p>Expiry Month</p>
+                            <select id="expMonth" class="col-lg-11 col-md-11" name="exp-month">
+                                <script>
+                                    fillExpiryMonths();
+                                </script>
+                            </select>
+                        </div>
+                        <div class="custom-select col-lg-6 col-md-6">
+                            <p>Expiry Year</p>
+                            <select id="expYear" class="col-lg-12 col-md-12" name="exp-year">
+                                <script>
+                                    fillExpiryYears();
+                                </script>
+                            </select>
+                        </div>
+                        <p>CVV</p>
+                        <input class="col-lg-12 col-md-12" id="cvv" type="text" name="cvv" placeholder="Security Code (CVV)">
                     </div>
-                    <div class="custom-select col-lg-6 col-md-6">
-                        <p>Expiry Year</p>
-                        <select id="expYearOpt" class="col-lg-12 col-md-12">
-                            <script>
-                                fillExpiryYears();
-                            </script>
-                        </select>
-                    </div>
-                    <p>CVV</p>
-                    <input class="col-lg-12 col-md-12" type="text" name="cvv" placeholder="Security Code (CVV)">
                     <input class="col-lg-12 col-md-12" type="submit" name="register" value="Register">
                     <p class="sign-up-link">Already have an account? <a href="login.php">Sign in here</a></p>
                 </form>
