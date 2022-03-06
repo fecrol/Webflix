@@ -27,18 +27,12 @@ function validatePassword($email, $password) {
 
     require("./connect_db.php");
 
-    $q = "SELECT password FROM users WHERE email = '$email'";
+    $q = "SELECT password FROM users WHERE email = '$email' AND password = SHA2('$password', 256)";
     $r = mysqli_query($link, $q);
     
     if(mysqli_num_rows($r) == 1) {
-        $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
-
-        if($password == $row["password"]) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        
+        return true;
     }
     else {
         return false;
@@ -54,7 +48,7 @@ function getUserInfo($email, $password) {
 
     require("connect_db.php");
 
-    $q = "SELECT id, firstName, lastName FROM users WHERE email='$email' AND password='$password'";
+    $q = "SELECT id, firstName, lastName FROM users WHERE email='$email' AND password=SHA2('$password', 256)";
     $r = mysqli_query($link, $q);
 
     $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
@@ -108,6 +102,83 @@ function login() {
             $_SESSION["error"] = true;
             load();
         }
+    }
+}
+
+function validateRegisterForm() {
+    $formIsValid = true;
+
+    if(empty($_POST["forename"])) {
+        $formIsValid = false;
+    }
+    if(empty($_POST["surname"])) {
+        $formIsValid = false;
+    }
+    if(empty($_POST["email"])) {
+        $formIsValid = false;
+    }
+    if(empty($_POST["password"])) {
+        $formIsValid = false;
+    }
+
+    if(empty($_POST["password2"])) {
+        $formIsValid = false;
+    }
+
+    if(!empty($_POST["password"]) && !empty($_POST["password2"]) && $_POST["password"] != $_POST["password2"]) {
+        $formIsValid = false;
+    }
+
+    if($_POST["subscription"] == 1) {
+        if(empty($_POST["card_no"])) {
+            $formIsValid = false;
+        }
+        if(empty($_POST["cvv"])) {
+            $formIsValid = false;
+        }
+    }
+
+    return $formIsValid;
+}
+
+function addDetailsToDatabase($forename, $surname, $email, $password, $subscription, $cardNum, $expMonth, $expYear, $cvv) {
+    require("./connect_db.php");
+
+    $q = "INSERT INTO users (firstName, lastName, email, password, premium, cardNumber, expMonth, expYear, cvv, dateOfReg) VALUES ('$forename', '$surname', '$email', SHA2('$password', 256), $subscription, '$cardNum', $expMonth, $expYear, $cvv, NOW())";
+
+    $r = mysqli_query($link, $q);
+
+    mysqli_close($link);
+}
+
+function register() {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        require("./connect_db.php");
+        $formIsValid = validateRegisterForm();
+        
+        if($formIsValid) {
+            $forename = mysqli_real_escape_string($link, $_POST["forename"]);
+            $surname = mysqli_real_escape_string($link, $_POST["surname"]);
+            $email = mysqli_real_escape_string($link, $_POST["email"]);
+            $password = mysqli_real_escape_string($link, $_POST["password"]);
+            $subscription = mysqli_real_escape_string($link, $_POST["subscription"]);
+            $cardNum = 0;
+            $expMonth = 0;
+            $expYear = 0;
+            $cvv = 0;
+
+            if($_POST["subscription"] == 1) {
+                $cardNum = mysqli_real_escape_string($link, $_POST["card_no"]);
+                $expMonth = mysqli_real_escape_string($link, $_POST["exp-month"]);
+                $expYear = mysqli_real_escape_string($link, $_POST["exp-year"]);
+                $cvv = mysqli_real_escape_string($link, $_POST["cvv"]);
+            }
+
+            addDetailsToDatabase($forename, $surname, $email, $password, $subscription, $cardNum, $expMonth, $expYear, $cvv);
+            mysqli_close($link);
+            load();
+        }
+        mysqli_close($link);
     }
 }
 ?>
