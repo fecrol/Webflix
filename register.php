@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles.css">
+    <script src="./js/script.js"></script>
     <title>Register</title>
 </head>
 <body>
@@ -41,16 +42,18 @@
                     <input class="col-lg-12 col-md-12" type="text" name="card_no" placeholder="Enter Card Number">
                     <div class="custom-select col-lg-6 col-md-6">
                         <p>Expiry Month</p>
-                        <select class="col-lg-11 col-md-11">
-                            <option value="0">Expiry Month:</option>
-                            <option value="1">01</option>
+                        <select id="expMonthOpt" class="col-lg-11 col-md-11">
+                            <script>
+                                fillExpiryMonths();
+                            </script>
                         </select>
                     </div>
                     <div class="custom-select col-lg-6 col-md-6">
                         <p>Expiry Year</p>
-                        <select class="col-lg-12 col-md-12">
-                            <option value="0">Expiry Year:</option>
-                            <option value="1">01</option>
+                        <select id="expYearOpt" class="col-lg-12 col-md-12">
+                            <script>
+                                fillExpiryYears();
+                            </script>
                         </select>
                     </div>
                     <p>CVV</p>
