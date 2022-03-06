@@ -29,7 +29,7 @@ require("./functions.php")
                         include("./html/error.html");
                     }
                     ?>
-                    <form method="post" action="<?php login() ?>">
+                    <form method="post" action="<?php login(); ?>">
                         <p>Email</p>
                         <input class="col-lg-12 col-md-12" type="text" name="email" placeholder="Enter Email">
                         <p>Password</p>
