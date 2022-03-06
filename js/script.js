@@ -20,7 +20,7 @@ function fillExpiryMonths() {
     to allow user to select options 
     */
 
-    var selectElement = document.getElementById("expMonthOpt");
+    var selectElement = document.getElementById("expMonth");
 
     for(let i=1; i<=12; i++) {
         var option = createOptionElement(i, addZeroIfNumLessThan10(i));
@@ -43,10 +43,34 @@ function fillExpiryYears() {
     */
 
     var year = getCurrentYear();
-    var selectElement = document.getElementById("expYearOpt");
+    var selectElement = document.getElementById("expYear");
 
     for(let i=0; i<=4; i++) {
         var option = createOptionElement(year + i, year + i);
         selectElement.appendChild(option)
     }
+}
+
+
+function emptyCardDetailsForm() {
+    var cardNumber = document.getElementById("card-num");
+    var expMonth = document.getElementById("expMonth");
+    var expYear = document.getElementById("expYear");
+    var cvv = document.getElementById("cvv");
+    cardNumber.value = "";
+    expMonth.selectedIndex = "0";
+    expYear.selectedIndex = "0";
+    cvv.value = "";
+}
+
+function hideCardDetailsForm() {
+    var cardDetailsForm = document.getElementById("card-details")
+    ;
+    emptyCardDetailsForm();
+    cardDetailsForm.style.display = "none";
+}
+
+function showCardDetailsForm() {
+    var cardDetailsForm = document.getElementById("card-details");
+    cardDetailsForm.style.display = "block";
 }
