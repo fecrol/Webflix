@@ -105,6 +105,18 @@ function login() {
     }
 }
 
+function checkIfEmailRegistered($email) {
+    require("./connect_db.php");
+    $q = "SELECT email FROM users WHERE email='$email'";
+    $r = mysqli_query($link, $q);
+
+    if(mysqli_num_rows($r) == 1) {
+        return true;
+    }
+
+    return false;
+}
+
 function validateRegisterForm() {
     $formIsValid = true;
 
@@ -115,6 +127,9 @@ function validateRegisterForm() {
         $formIsValid = false;
     }
     if(empty($_POST["email"])) {
+        $formIsValid = false;
+    }
+    if(checkIfEmailRegistered($_POST["email"])) {
         $formIsValid = false;
     }
     if(empty($_POST["password"])) {
