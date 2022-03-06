@@ -4,7 +4,7 @@ function fillExpiryMonths() {
     for(let i=1; i<=12; i++) {
         var option = document.createElement("option");
         option.value = i;
-        option.innerHTML = i;
+        option.innerHTML = addZeroIfNumLessThan10(i);
         selectElement.appendChild(option);
     }
 }
