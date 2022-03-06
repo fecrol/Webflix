@@ -168,10 +168,11 @@ function addDetailsToDatabase($forename, $surname, $email, $password, $subscript
 
 function register() {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        require("./connect_db.php");
         $formIsValid = validateRegisterForm();
         
         if($formIsValid) {
+            require("./connect_db.php");
+
             $forename = mysqli_real_escape_string($link, $_POST["forename"]);
             $surname = mysqli_real_escape_string($link, $_POST["surname"]);
             $email = mysqli_real_escape_string($link, $_POST["email"]);
@@ -193,7 +194,6 @@ function register() {
             mysqli_close($link);
             load();
         }
-        mysqli_close($link);
     }
 }
 ?>
