@@ -98,6 +98,10 @@ input[type="email"] {
   color: #eeeeee;
 }
 
+#card-details {
+  display: none;
+}
+
 .login-form input[type="submit"] {
   border: none;
   outline: none;
