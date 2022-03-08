@@ -14,6 +14,8 @@
     <title>Home</title>
 </head>
 <body>
-    
+    <?php
+    require("./html/navbar.html")
+    ?>
 </body>
 </html>
