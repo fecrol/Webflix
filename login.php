@@ -1,6 +1,7 @@
 <?php
 session_start();
-require("./functions.php")
+require("./functions.php");
+logout();
 ?>
 
 <!DOCTYPE html>
