@@ -204,4 +204,11 @@ function redirect() {
         load();
     }
 }
+
+function logout() {
+    if(isset($_SESSION["user_id"])) {
+        session_destroy();
+        session_unset();
+    }
+}
 ?>
