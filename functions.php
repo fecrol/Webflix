@@ -89,7 +89,6 @@ function login() {
         $passwordVal = validatePassword($email, $password);
 
         if($emailVal && $passwordVal) {
-            session_start();
             $userInfo = getUserInfo($email, $password);
 
             $_SESSION["user_id"] = $userInfo["id"];
@@ -98,7 +97,6 @@ function login() {
             load("home.php");
         }
         else {
-            session_start();
             $_SESSION["error"] = true;
             load();
         }
@@ -194,6 +192,16 @@ function register() {
             mysqli_close($link);
             load();
         }
+    }
+}
+
+function redirect() {
+    /*
+    Redirects user to login page if not logged in.
+    */
+
+    if(!isset($_SESSION["user_id"])) {
+        load();
     }
 }
 ?>
