@@ -1,4 +1,7 @@
 <?php
+session_start();
+require("./functions.php");
+redirect();
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +18,7 @@
 </head>
 <body>
     <?php
-    require("./html/navbar.html")
+    require("./navbar.php")
     ?>
 </body>
 </html>
