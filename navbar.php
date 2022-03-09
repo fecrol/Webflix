@@ -1,7 +1,3 @@
-<?php
-session_start(); 
-?>
-
 <nav class="navbar navbar-expand-lg navbar-dark dark-bg">
     <div class="container-fluid">
         <a class="navbar-brand nav-logo-link-lg nav-logo-link-md nav-logo-link-sm" href="./home.php"><img
