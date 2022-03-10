@@ -18,7 +18,7 @@
                     <a class="nav-link" href="./tv-shows.php">TV Shows</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./coming_soon.php">Coming Soon</a>
+                    <a class="nav-link" href="./coming-soon.php">Coming Soon</a>
                 </li>
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
