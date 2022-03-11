@@ -16,22 +16,18 @@ function getContent(type, id) {
     const url = BASE_URL + type + "/" + id + API_KEY;
 
     fetch(url).then(res => res.json()).then(data => {
-        console.log(data);
         showContent(data);
     })
 }
 
 function showContent(data) {
-    cards.innerHTML = "";
-
     const title = data["title"] 
     const poster_path = data["poster_path"];
     const card = document.createElement("div");
+    card.classList.add("card");
     card.innerHTML = 
         `
         <img src="${IMG_BASE_URL + poster_path}" alt="${title}">
         `
     cards.appendChild(card);
 }
-
-getContent("movie", 11);
