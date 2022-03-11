@@ -20,5 +20,9 @@ redirect();
     <?php
     require("./navbar.php")
     ?>
+    <div id="cards" class="row center">
+        
+    </div>
+    <script src="./js/tmdb-script.js"></script>
 </body>
 </html>
