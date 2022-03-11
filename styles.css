@@ -156,12 +156,6 @@ input[type="email"] {
   font-size: 1.4rem;
 }
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 /* Change colour of google chrome autofill */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -173,12 +167,6 @@ input:-webkit-autofill:active {
 
 input:-webkit-autofill {
   -webkit-text-fill-color: #eeeeee !important;
-}
-
-/* Mobile layout */
-[class*="col-"] {
-  width: 100%;
-  float: left;
 }
 
 .login-content-container {
@@ -202,6 +190,33 @@ input:-webkit-autofill {
 
 .dark-bg {
   background-color: #111111;
+}
+
+#cards {
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.card {
+  width: 300px;
+  margin: 1rem;
+  background-color: #111111;
+}
+
+.card img {
+  width: 100%;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Mobile layout */
+[class*="col-"] {
+  width: 100%;
+  float: left;
 }
 
 /* Tablet layout */
