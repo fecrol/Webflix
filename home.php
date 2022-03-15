@@ -20,9 +20,24 @@ redirect();
     <?php
     require("./navbar.php")
     ?>
-    <div id="cards" class="col-lg-12 col-md-12 center">
-        
+    <div class="col-lg-12 col-md-12 center">
+        <div id="carouselExampleControls" class="carousel slide col-lg-9 col-md-11 center" data-bs-ride="carousel" data-bs-interval="false">
+            <div id="carousel-inner" class="carousel-inner col-lg-9 col-md-9">
+                
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
     <script src="./js/tmdb-script.js"></script>
+    <script>
+       displayCarousel();
+    </script>
 </body>
 </html>
