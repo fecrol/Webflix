@@ -195,6 +195,17 @@ input:-webkit-autofill {
 
 .carousel {
   background: #111111;
+  margin-top: 2rem;
+}
+
+.card-header {
+  padding-left: 1.5rem;
+}
+
+.card-header h2 {
+  font-weight: normal;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 0.5rem;
 }
 
 .card {
@@ -209,7 +220,8 @@ input:-webkit-autofill {
 
 .card-content {
   padding-right: 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  text-align: justify;
 }
 
 .row::after {
