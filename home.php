@@ -21,9 +21,11 @@ redirect();
     require("./navbar.php")
     ?>
     <div class="col-lg-12 col-md-12 center">
-        <div id="carouselExampleControls" class="carousel slide col-lg-9 col-md-11 center" data-bs-ride="carousel" data-bs-interval="false">
+        <div id="carouselExampleControls" class="carousel slide col-lg-10 col-md-11 center" data-bs-ride="carousel" data-bs-interval="false">
             <div id="carousel-inner" class="carousel-inner col-lg-9 col-md-9">
-                
+                <div class="card-header">
+                    <h2>Top 10 Movies</h1>
+                </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -37,7 +39,7 @@ redirect();
     </div>
     <script src="./js/tmdb-script.js"></script>
     <script>
-       displayCarousel();
+       //displayCarousel();
     </script>
 </body>
 </html>
