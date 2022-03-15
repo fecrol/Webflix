@@ -12,44 +12,50 @@ function retrieveApiKey() {
     return apiKeyJson["api-key"];
 }
 
-function addCardsToCarousel(type, id, isFirstCard) {
-    const url = BASE_URL + type + "/" + id + API_KEY; 
+function addCardToCarousel(type, id, parent_container, is_first_card) {
+    const url = BASE_URL + type + "/" + id + API_KEY;
 
     fetch(url).then(res => res.json()).then(data => {
-        const title = data["title"];
-        const overview = data["overview"];
-        const poster_path = data["poster_path"];
-        const carousel_item = document.createElement("div");
-        carousel_item.classList.add("carousel-item");
-
-        if(isFirstCard) {
-            carousel_item.classList.add("active");
-        }
-
-        carousel_item.innerHTML = 
-            `
-            <div class="card">
-                <div class="row">
-                    <div class="card-image col-lg-3 col-md-4">
-                        <img src="${IMG_BASE_URL + poster_path}" alt="${title}">
-                    </div>
-                    <div class="card-content col-lg-9 col-md-8">
-                        <h1>${title}</h1>
-                        <p>${overview}</p>
-                    </div>
-                </div>
-            </div>
-            `
-        carousel_inner.appendChild(carousel_item);
+        createCarouselCard(data, parent_container, is_first_card);
     })
 }
 
-function displayCarousel() {
-    var content = [{"type": "movie", "id": 2}, {"type": "movie", "id": 3}, {"type": "movie", "id": 5}, {"type": "movie", "id": 6}, {"type": "movie", "id": 12}, {"type": "movie", "id": 13}];
+function createCarouselCard(data, parent_container, is_frist_card) {
+    
+    const title = data["title"];
+    const overview = data["overview"];
+    const poster_path = data["poster_path"];
+    const carousel_item = document.createElement("div");
+    carousel_item.classList.add("carousel-item");
 
-    addCardsToCarousel(content[0]["type"], content[0]["id"], true);
+    if(is_frist_card) {
+        carousel_item.classList.add("active");
+    }
 
-    for(let i=1; i<content.length; i++) {
-            addCardsToCarousel(content[i]["type"], content[i]["id"]);
-        }
+    carousel_item.innerHTML = 
+        `
+        <div class="card">
+            <div class="card-header">
+            </div>
+            <div class="row">
+                <div class="card-image col-lg-3 col-md-4">
+                    <img src="${IMG_BASE_URL + poster_path}" alt="${title}">
+                </div>
+                <div class="card-content col-lg-9 col-md-8">
+                    <h3>${title}</h3>
+                    <p>${overview}</p>
+                </div>
+            </div>
+        </div>
+        `
+    parent_container.appendChild(carousel_item);
 }
+
+var content = [{"type": "movie", "id": 2}, {"type": "movie", "id": 3}, {"type": "movie", "id": 5}, {"type": "movie", "id": 6}, {"type": "movie", "id": 12}, {"type": "movie", "id": 13}];
+
+addCardToCarousel(content[0]["type"], content[0]["id"], carousel_inner, true);
+
+for(let i=1; i<content.length; i++) {
+    addCardToCarousel(content[i]["type"], content[i]["id"], carousel_inner, false);
+}
+
