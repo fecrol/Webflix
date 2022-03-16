@@ -198,10 +198,6 @@ input:-webkit-autofill {
   margin: 1.5rem;
 }
 
-.card-header {
-  padding-left: 1.5rem;
-}
-
 .card-header h2 {
   font-weight: normal;
   border-bottom: 1px solid #eeeeee;
@@ -215,18 +211,14 @@ input:-webkit-autofill {
 }
 
 .card-image img {
-  padding-left: 1.5rem;
   width: 100%;
   height: auto;
 }
 
 .card-content {
-  padding-right: 1.5rem;
-  font-size: 1.1rem;
-  text-align: justify;
-  overflow: hidden;
-  height: 175px;
-  border: 1px solid white;
+  visibility: hidden;
+  height: 0;
+  width: 0;
 }
 
 .row::after {
@@ -305,6 +297,19 @@ input:-webkit-autofill {
   .nav-logo-link-md {
     width: calc(100% / 6);
   }
+
+  .card-content {
+    visibility: visible;
+    padding-right: 1.5rem;
+    font-size: 1.1rem;
+    text-align: justify;
+    overflow: scroll;
+    height: 10.9rem;
+  }
+
+  .card-content::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Desktop layout */
@@ -376,5 +381,18 @@ input:-webkit-autofill {
 
   .nav-logo-link-lg {
     width: calc(100% / 11);
+  }
+
+  .card-content {
+    visibility: visible;
+    padding-right: 1.5rem;
+    font-size: 1.1rem;
+    text-align: justify;
+    overflow: scroll;
+    height: 10.9rem;
+  }
+
+  .card-content::-webkit-scrollbar {
+    display: none;
   }
 }
