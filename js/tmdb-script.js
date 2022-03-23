@@ -60,20 +60,3 @@ function createCarouselCard(data, parent_container, is_frist_card) {
         `
     parent_container.appendChild(carousel_item);
 }
-
-var content = [{"type": "movie", "id": 2}, {"type": "movie", "id": 3}, {"type": "movie", "id": 5}, {"type": "movie", "id": 6}, {"type": "movie", "id": 12}, {"type": "movie", "id": 13}];
-
-var content2 = [{"type": "tv", "id": 2}, {"type": "tv", "id": 3}, {"type": "tv", "id": 5}, {"type": "tv", "id": 6}, {"type": "tv", "id": 500}, {"type": "tv", "id": 13}];
-
-addCardToCarousel(content[0]["type"], content[0]["id"], movie_carousel, true);
-
-for(let i=1; i<content.length; i++) {
-    addCardToCarousel(content[i]["type"], content[i]["id"], movie_carousel, false);
-}
-
-addCardToCarousel(content2[0]["type"], content2[0]["id"], tv_carousel, true);
-
-for(let i=1; i<content2.length; i++) {
-    addCardToCarousel(content2[i]["type"], content2[i]["id"], tv_carousel, false);
-}
-
