@@ -193,32 +193,36 @@ input:-webkit-autofill {
   background-color: #111111;
 }
 
-.carousel {
-  background: #111111;
-  margin: 1.5rem;
+#hc-movie {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./img/movies.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.card-header h2 {
-  font-weight: normal;
-  border-bottom: 1px solid #eeeeee;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  font-size: 1.8rem;
+#hc-tv {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./img/tv-shows.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.card {
-  background: #111111;
+#hc-coming-soon {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./img/coming-soon.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.card-image img {
-  width: 100%;
-  height: auto;
+.cont {
+  height: 90vh;
 }
 
-.card-content {
-  visibility: hidden;
-  height: 0;
-  width: 0;
+.home-content {
+  height: 50vh;
 }
 
 .row::after {
@@ -297,19 +301,6 @@ input:-webkit-autofill {
   .nav-logo-link-md {
     width: calc(100% / 6);
   }
-
-  .card-content {
-    visibility: visible;
-    padding-right: 1.5rem;
-    font-size: 1.1rem;
-    text-align: justify;
-    overflow: scroll;
-    height: 10.9rem;
-  }
-
-  .card-content::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 /* Desktop layout */
@@ -381,18 +372,5 @@ input:-webkit-autofill {
 
   .nav-logo-link-lg {
     width: calc(100% / 11);
-  }
-
-  .card-content {
-    visibility: visible;
-    padding-right: 1.5rem;
-    font-size: 1.1rem;
-    text-align: justify;
-    overflow: scroll;
-    height: 10.9rem;
-  }
-
-  .card-content::-webkit-scrollbar {
-    display: none;
   }
 }
