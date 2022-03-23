@@ -18,45 +18,20 @@ redirect();
 </head>
 <body>
     <?php
-    require("./navbar.php")
+        require("./navbar.php")
     ?>
-    <div class="col-lg-12 col-md-12 center">
-        <div id="movieCarouselControls" class="carousel slide col-lg-10 col-md-11 center" data-bs-ride="carousel" data-bs-interval="false">
-            <div id="movie-carousel" class="carousel-inner col-lg-9 col-md-9">
-                <div class="card-header">
-                    <h2>Top 10 Movies</h1>
-                </div>
+    <div class=" cont col-lg-12 col-md-12 center">
+        <div class="row col-lg-10 col-md-10 center">
+            <div id="hc-movie" class="home-content col-lg-4 col-md-4 center">
+                <h1>Movies</h1>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#movieCarouselControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#movieCarouselControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div id="hc-tv" class="home-content col-lg-4 col-md-4 center">
+                <h1>TV Shows</h1>
+            </div>
+            <div id="hc-coming-soon" class="home-content col-lg-4 col-md-4 center">
+                <h1>Coming Soon</h1>
+            </div>
         </div>
     </div>
-
-    <div class="col-lg-12 col-md-12 center">
-        <div id="tvCarouselControls" class="carousel slide col-lg-10 col-md-11 center" data-bs-ride="carousel" data-bs-interval="false">
-            <div id="tv-carousel" class="carousel-inner col-lg-9 col-md-9">
-                <div class="card-header">
-                    <h2>Top 10 TV Shows</h1>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#tvCarouselControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#tvCarouselControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-    <script src="./js/tmdb-script.js"></script>
-    <script>
-    </script>
 </body>
 </html>
