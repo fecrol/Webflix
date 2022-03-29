@@ -20,17 +20,23 @@ redirect();
     <?php
         require("./navbar.php")
     ?>
-    <div class=" cont col-lg-12 col-md-12 center">
-        <div class="row col-lg-10 col-md-10 center">
-            <div id="hc-movie" class="home-content col-lg-4 col-md-4 center">
-                <h1>Movies</h1>
-            </div>
-            <div id="hc-tv" class="home-content col-lg-4 col-md-4 center">
-                <h1>TV Shows</h1>
-            </div>
-            <div id="hc-coming-soon" class="home-content col-lg-4 col-md-4 center">
-                <h1>Coming Soon</h1>
-            </div>
+    <div class="cont col-lg-12 center vertical-center">
+        <div class="row col-lg-10 center">
+            <a href="movies.php" class="col-lg-4 center">
+                <div id="hc-movie" class="home-content col-lg-12 center">
+                    <h1>Movies</h1>
+                </div>
+            </a>    
+            <a href="tv-shows.php" class="col-lg-4 center">
+                <div id="hc-tv" class="home-content col-lg-12 center">
+                    <h1>TV Shows</h1>
+                </div>
+            </a>
+            <a href="coming-soon.php" class="col-lg-4 center">
+                <div id="hc-coming-soon" class="home-content col-lg-12 center">
+                    <h1>Coming Soon</h1>
+                </div>
+            </a>
         </div>
     </div>
 </body>
