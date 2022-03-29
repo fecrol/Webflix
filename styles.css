@@ -217,12 +217,18 @@ input:-webkit-autofill {
   background-repeat: no-repeat;
 }
 
-.cont {
-  height: 90vh;
-}
-
 .home-content {
   height: 50vh;
+  
+}
+
+.home-content h1 {
+  font-weight: normal;
+}
+
+.cont a {
+  list-style: none;
+  color: #eeeeee;
 }
 
 .row::after {
@@ -372,5 +378,9 @@ input:-webkit-autofill {
 
   .nav-logo-link-lg {
     width: calc(100% / 11);
+  }
+
+  .cont {
+    margin-top: 12%;
   }
 }
