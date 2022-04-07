@@ -11,20 +11,6 @@ function getApiKey() {
     return $key["api-key"];
 }
 
-function getContentById($id, $type) {
-    global $baseURL;
-    global $apiKey;
-
-    $url = $baseURL . $type . "/" . $id . $apiKey;
-
-    $r = file_get_contents($url);
-    $r = json_decode($r, true);
-    
-    return $r;
-}
-
-getContentById(500, "movie");
-
 function validateEmail($email) {
     /*
     Validates email to make sure it exists in the database.
@@ -234,6 +220,57 @@ function logout() {
     if(isset($_SESSION["user_id"])) {
         session_destroy();
         session_unset();
+    }
+}
+
+function getMovies() {
+    /*
+    Gets the id and type of movies saved in the databse.
+    */
+
+    require("./connect_db.php");
+
+    $data = [];
+
+    $q = "SELECT tmdbId, type FROM content WHERE type LIKE 'movie'";
+    $r = mysqli_query($link, $q);
+
+    
+    while($row = mysqli_fetch_assoc($r)) {
+        array_push($data, $row);
+    }
+
+    return $data;
+}
+
+function getContentById($id, $type) {
+    /*
+    Makes an api call to the movie database api and returns the result.
+    */
+
+    global $baseURL;
+    global $apiKey;
+
+    $url = $baseURL . $type . "/" . $id . $apiKey;
+
+    $r = file_get_contents($url);
+    $r = json_decode($r, true);
+    
+    return $r;
+}
+
+function displayContent($data) {
+    global $imgBaseURL;
+
+    for($i=0; $i<sizeof($data); $i++) {
+        $content = getContentById($data[$i]["tmdbId"], $data[$i]["type"]);
+        $posterPath = $content["poster_path"];
+        $imgURL = $imgBaseURL . $posterPath;
+        echo '
+        <div class="card">
+            <img src="'.$imgURL.'">
+        </div>
+        ';
     }
 }
 ?>
