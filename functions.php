@@ -1,5 +1,30 @@
 <?php
 
+$baseURL = "https://api.themoviedb.org/3/";
+$imgBaseURL = "https://image.tmdb.org/t/p/w500";
+$apiKey = getApiKey();
+
+function getApiKey() {
+    $key = file_get_contents("./misc/api-key.json");
+    $key = json_decode($key, true);
+    
+    return $key["api-key"];
+}
+
+function getContentById($id, $type) {
+    global $baseURL;
+    global $apiKey;
+
+    $url = $baseURL . $type . "/" . $id . $apiKey;
+
+    $r = file_get_contents($url);
+    $r = json_decode($r, true);
+    
+    return $r;
+}
+
+getContentById(500, "movie");
+
 function validateEmail($email) {
     /*
     Validates email to make sure it exists in the database.
