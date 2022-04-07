@@ -20,5 +20,14 @@ redirect();
     <?php
     require("./navbar.php")
     ?>
+
+    <div class="flex-container">
+        <div class="card-container">
+            <?php
+                $content = getMovies();
+                displayContent($content);
+            ?>
+        </div>
+    </div>
 </body>
 </html>
