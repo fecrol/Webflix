@@ -24,8 +24,7 @@ redirect();
     <div class="flex-container">
         <div class="card-container">
             <?php
-                $content = getMovies();
-                displayContent($content);
+                
             ?>
         </div>
     </div>
