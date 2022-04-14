@@ -31,7 +31,6 @@ function validatePassword($email, $password) {
     $r = mysqli_query($link, $q);
     
     if(mysqli_num_rows($r) == 1) {
-        
         return true;
     }
     else {
