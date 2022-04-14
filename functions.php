@@ -218,7 +218,7 @@ function getMovies() {
 
     require("./connect_db.php");
 
-    $data = [];
+    $data = array();
 
     $q = "SELECT tmdbId, type FROM content WHERE type LIKE 'movie'";
     $r = mysqli_query($link, $q);
