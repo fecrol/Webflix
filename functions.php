@@ -1,16 +1,5 @@
 <?php
 
-$baseURL = "https://api.themoviedb.org/3/";
-$imgBaseURL = "https://image.tmdb.org/t/p/w500";
-$apiKey = getApiKey();
-
-function getApiKey() {
-    $key = file_get_contents("./misc/api-key.json");
-    $key = json_decode($key, true);
-    
-    return $key["api-key"];
-}
-
 function validateEmail($email) {
     /*
     Validates email to make sure it exists in the database.
@@ -241,36 +230,5 @@ function getMovies() {
     }
 
     return $data;
-}
-
-function getContentById($id, $type) {
-    /*
-    Makes an api call to the movie database api and returns the result.
-    */
-
-    global $baseURL;
-    global $apiKey;
-
-    $url = $baseURL . $type . "/" . $id . $apiKey;
-
-    $r = file_get_contents($url);
-    $r = json_decode($r, true);
-    
-    return $r;
-}
-
-function displayContent($data) {
-    global $imgBaseURL;
-
-    for($i=0; $i<sizeof($data); $i++) {
-        $content = getContentById($data[$i]["tmdbId"], $data[$i]["type"]);
-        $posterPath = $content["poster_path"];
-        $imgURL = $imgBaseURL . $posterPath;
-        echo '
-        <div class="card">
-            <img src="'.$imgURL.'">
-        </div>
-        ';
-    }
 }
 ?>
