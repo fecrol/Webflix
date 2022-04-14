@@ -18,13 +18,13 @@ redirect();
 </head>
 <body>
     <?php
-    require("./navbar.php")
+    require("./navbar.php");
     ?>
 
     <div class="flex-container">
-        <div class="card-container">
+        <div id="movies" class="card-container">
             <?php
-                
+            require("./api-scripts/get-movies.php");
             ?>
         </div>
     </div>
