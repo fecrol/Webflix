@@ -20,5 +20,13 @@ redirect();
     <?php
     require("./navbar.php")
     ?>
+
+    <div class="flex-container">
+        <div id="content" class="card-container">
+            <?php
+            require("./api-scripts/get-tvshows.php");
+            ?>
+        </div>
+    </div>
 </body>
 </html>
