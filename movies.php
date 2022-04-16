@@ -22,7 +22,7 @@ redirect();
     ?>
 
     <div class="flex-container">
-        <div id="movies" class="card-container">
+        <div id="content" class="card-container">
             <?php
             require("./api-scripts/get-movies.php");
             ?>
