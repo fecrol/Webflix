@@ -243,14 +243,14 @@ input:-webkit-autofill {
   justify-content: center;
   align-items: center;
   width: 100%;
-  /*min-height: 93vh;*/
 }
 
 .card-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: 85%;
-  /*min-height: 83vh;*/
 }
 
 .card {
@@ -329,6 +329,10 @@ input:-webkit-autofill {
   .nav-logo-link-md {
     width: calc(100% / 6);
   }
+
+  .card {
+    width: calc(100% / 3);
+  }
 }
 
 /* Desktop layout */
@@ -404,5 +408,9 @@ input:-webkit-autofill {
 
   .cont {
     margin-top: 12%;
+  }
+
+  .card {
+    width: calc(100% / 4);
   }
 }
