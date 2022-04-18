@@ -235,7 +235,7 @@ function getMovies() {
 
 function getTvShows() {
     /*
-    Gets the id and type of movies saved in the databse.
+    Gets the id and type of tv shows saved in the databse.
     */
 
     require("./connect_db.php");
@@ -243,6 +243,28 @@ function getTvShows() {
     $data = array();
 
     $q = "SELECT tmdbId, type FROM content WHERE type LIKE 'tv'";
+    $r = mysqli_query($link, $q);
+
+    
+    while($row = mysqli_fetch_assoc($r)) {
+        array_push($data, $row);
+    }
+
+    mysqli_close($link);
+
+    return $data;
+}
+
+function getComingSoon() {
+    /*
+    Gets the id and type of coming soon content saved in the databse.
+    */
+
+    require("./connect_db.php");
+
+    $data = array();
+
+    $q = "SELECT tmdbId, type FROM coming_soon";
     $r = mysqli_query($link, $q);
 
     
