@@ -24,11 +24,11 @@ function fetchContent(contentType, contentId) {
     const url = BASE_URL + contentType + "/" + contentId + API_KEY;
 
     fetch(url).then(res => res.json()).then(data => {
-        displayContent(data);
+        displayContent(data, contentType, contentId);
     })
 }
 
-function displayContent(data) {
+function displayContent(data, contentType, contentId) {
     /*
     Displays the cover image onto the screen
     */
@@ -51,7 +51,7 @@ function displayContent(data) {
 
     card.innerHTML = 
         `
-        <img src="${IMG_URL}" alt="${title}">
+        <img src="${IMG_URL}" alt="${title}"></a>
         `;
     
     parentContainer.appendChild(card);
