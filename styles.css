@@ -260,6 +260,15 @@ input:-webkit-autofill {
   margin: 1rem;
 }
 
+.card:hover {
+  padding: 0.5rem;
+}
+
+.card a {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Mobile layout */
 [class*="col-"] {
   width: 100%;
