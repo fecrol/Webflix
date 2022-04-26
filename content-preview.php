@@ -2,6 +2,7 @@
 session_start();
 require("./functions.php");
 redirect();
+$contentDetails = getContentDetails();
 ?>
 
 <!DOCTYPE html>
