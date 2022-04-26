@@ -276,4 +276,22 @@ function getComingSoon() {
 
     return $data;
 }
+
+function getContentDetails() {
+    /*
+    Retrieves the content details stored in the url.
+    */
+
+    $contentDetails = array();
+
+    if(isset($_GET["type"])) {
+        $contentDetails["type"] = htmlspecialchars($_GET["type"]);
+    }
+
+    if(isset($_GET["id"])) {
+        $contentDetails["id"] = htmlspecialchars($_GET["id"]);
+    }
+
+    return $contentDetails;
+}
 ?>
