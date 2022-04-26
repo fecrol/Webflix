@@ -51,7 +51,7 @@ function displayContent(data, contentType, contentId) {
 
     card.innerHTML = 
         `
-        <a href="./content-preview.php?type='${contentType}'?id='${contentId}'"><img src="${IMG_URL}" alt="${title}"></a>
+        <a href="./content-preview.php?type=${contentType}&id=${contentId}"><img src="${IMG_URL}" alt="${title}"></a>
         `;
     
     parentContainer.appendChild(card);
