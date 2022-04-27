@@ -294,4 +294,24 @@ function getContentDetails() {
 
     return $contentDetails;
 }
+
+function getSingleContent($tmdbId, $type) {
+    /*
+    Retrieves information about a single piece of content from the database.
+    */
+
+    require("./connect_db.php");
+
+    $tmdbId = mysqli_real_escape_string($link, $tmdbId);
+    $type = mysqli_real_escape_string($link, $type);
+
+    $q = "SELECT * FROM content WHERE tmdbId=$tmdbId AND type='$type'";
+    $r = mysqli_query($link, $q);
+
+    $row = mysqli_fetch_assoc($r);
+
+    mysqli_close($link);
+
+    return $row;
+}
 ?>
