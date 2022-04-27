@@ -2,7 +2,6 @@
 session_start();
 require("./functions.php");
 redirect();
-$contentDetails = getContentDetails();
 ?>
 
 <!DOCTYPE html>
@@ -20,5 +19,15 @@ $contentDetails = getContentDetails();
     <?php
     require("./navbar.php");
     ?>
+
+    <div class="flex-container">
+        <div class="card-container">
+            <div id="content" class="content-card">
+                <div class="single-content-card">
+                    <?php require("./api-scripts/get-single-content.php"); ?>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
