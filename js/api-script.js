@@ -56,3 +56,46 @@ function displayContent(data, contentType, contentId) {
     
     parentContainer.appendChild(card);
 }
+
+function fetchSingleContent(contentType, contentId, trailer) {
+    /*
+    Fetches data from the api to be displayed on webpage.
+    */
+
+    const url = BASE_URL + contentType + "/" + contentId + API_KEY;
+
+    fetch(url).then(res => res.json()).then(data => {
+        displaySingleContent(data, trailer);
+    })
+}
+
+function displaySingleContent(data, trailer) {
+
+    let title = "";
+    
+    // In the tmdb api, tv show name is set as original name rather than title.
+    if(!data["title"]) {
+        title = data["original_name"];
+    }
+    else {
+        title = data["title"];
+    }
+
+    const card = document.createElement("div");
+    card.classList.add("single-content-card");
+
+    card.innerHTML =
+        `
+        <div class="card-title">
+            <h1>${title}</h1>
+        </div>
+        <div class="content-trailer">
+            <iframe width='420' height='315' src='${trailer}'></iframe>
+        </div>
+        <div class="content-info">
+
+        </div>
+        `;
+    
+    parentContainer.appendChild(card);
+}
