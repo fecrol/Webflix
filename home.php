@@ -22,12 +22,12 @@ redirect();
     ?>
     <div class="cont col-lg-12 center vertical-center">
         <div class="row col-lg-10 center">
-            <a href="movies.php" class="col-lg-4 center">
+            <a href="movies.php" class="col-lg-6 center">
                 <div id="hc-movie" class="home-content col-lg-12 center">
                     <h1>Movies</h1>
                 </div>
             </a>    
-            <a href="tv-shows.php" class="col-lg-4 center">
+            <a href="tv-shows.php" class="col-lg-6 center">
                 <div id="hc-tv" class="home-content col-lg-12 center">
                     <h1>TV Shows</h1>
                 </div>
