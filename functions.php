@@ -292,4 +292,19 @@ function getSingleContent($tmdbId, $type) {
 
     return $row;
 }
+
+function getUserDetails($userId) {
+    /*
+    Gets user details from database to be displayed on user account page.
+    */
+
+    require("./connect_db.php");
+
+    $q = "SELECT firstName, lastName, email, premium, dateOfReg FROM users WHERE id=$userId";
+    $r = mysqli_query($link, $r);
+
+    $row = mysqli_fetch_assoc($row);
+
+    return $row;
+}
 ?>
