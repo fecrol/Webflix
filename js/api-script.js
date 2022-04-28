@@ -72,6 +72,7 @@ function fetchSingleContent(contentType, contentId, trailer) {
 function displaySingleContent(data, trailer) {
 
     let title = "";
+    let release_date = "";
     
     // In the tmdb api, tv show name is set as original name rather than title.
     if(!data["title"]) {
@@ -79,6 +80,13 @@ function displaySingleContent(data, trailer) {
     }
     else {
         title = data["title"];
+    }
+
+    if(!data["release_date"]) {
+        release_date = data["first_air_date"];
+    }
+    else {
+        release_date = data["release_date"];
     }
 
     const card = document.createElement("div");
@@ -89,7 +97,7 @@ function displaySingleContent(data, trailer) {
         <iframe src='${trailer}'></iframe>
         <h1>${title}</h1>
         <p>${data["overview"]}</p>
-        <p>Relase Date: ${data["release_date"]}</p>
+        <p>Relase Date: ${release_date}</p>
         `;
     
     parentContainer.appendChild(card);
