@@ -32,11 +32,6 @@ redirect();
                     <h1>TV Shows</h1>
                 </div>
             </a>
-            <a href="coming-soon.php" class="col-lg-4 center">
-                <div id="hc-coming-soon" class="home-content col-lg-12 center">
-                    <h1>Coming Soon</h1>
-                </div>
-            </a>
         </div>
     </div>
 </body>
