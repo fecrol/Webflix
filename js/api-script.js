@@ -94,7 +94,7 @@ function displaySingleContent(data, trailer) {
 
     card.innerHTML =
         `
-        <iframe src='${trailer}'></iframe>
+        <iframe allowfullscreen='true' src='${trailer}'></iframe>
         <h1>${title}</h1>
         <p>${data["overview"]}</p>
         <p>Relase Date: ${release_date}</p>
