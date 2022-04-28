@@ -301,9 +301,11 @@ function getUserDetails($userId) {
     require("./connect_db.php");
 
     $q = "SELECT firstName, lastName, email, premium, dateOfReg FROM users WHERE id=$userId";
-    $r = mysqli_query($link, $r);
+    $r = mysqli_query($link, $q);
 
-    $row = mysqli_fetch_assoc($row);
+    $row = mysqli_fetch_assoc($r);
+
+    mysqli_close($link);
 
     return $row;
 }
