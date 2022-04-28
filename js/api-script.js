@@ -86,15 +86,10 @@ function displaySingleContent(data, trailer) {
 
     card.innerHTML =
         `
-        <div class="card-title">
-            <h1>${title}</h1>
-        </div>
-        <div class="content-trailer">
-            <iframe width='420' height='315' src='${trailer}'></iframe>
-        </div>
-        <div class="content-info">
-
-        </div>
+        <iframe src='${trailer}'></iframe>
+        <h1>${title}</h1>
+        <p>${data["overview"]}</p>
+        <p>Relase Date: ${data["release_date"]}</p>
         `;
     
     parentContainer.appendChild(card);
