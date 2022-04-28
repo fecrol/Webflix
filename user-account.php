@@ -1,5 +1,9 @@
 <?php
 session_start();
+require("./functions.php");
+redirect();
+$userId = $_SESSION["user_id"];
+$userInfo = getUserDetails($userId);
 ?>
 
 <!DOCTYPE html>
@@ -16,5 +20,38 @@ session_start();
 </head>
 <body>
     <?php require("./navbar.php"); ?>
+
+    <div class="flex-container">
+        <div class="user-info">
+            <div class="user-info-card">
+                <div class="user-info-card-header">
+                    <h1>Your Details</h1>
+                </div>
+                <div class="user-info-card-content">
+                    <h2>Forename: </h2>
+                    <h2>Surname: </h2>
+                    <h2>Email: </h2>
+                    <h2>Subscription: </h2>
+                </div>
+                <div class="user-info-card-footer">
+                    <p>Registered on: </p>
+                </div>
+            </div>
+
+            <div id="card-info" class="card-info-card">
+                <div class="card-info-card-header">
+                    <h1>Card Details</h1>
+                </div>
+                <div class="card-info-card-content">
+                    <h2>Card Number: </h2>
+                    <h2>Expiry Date: </h2>
+                    <h2>CVV: </h2>
+                </div>
+                <div class="card-info-card-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
