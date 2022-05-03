@@ -32,9 +32,9 @@ logout();
                     ?>
                     <form method="post" action="<?php login(); ?>">
                         <p>Email</p>
-                        <input class="col-lg-12 col-md-12" type="text" name="email" placeholder="Enter Email">
+                        <input class="col-lg-12 col-md-12" type="text" name="email" placeholder="Enter Email" required>
                         <p>Password</p>
-                        <input class="col-lg-12 col-md-12" type="password" name="password" placeholder="Enter Password">
+                        <input class="col-lg-12 col-md-12" type="password" name="password" placeholder="Enter Password" required>
                         <input class="col-lg-12 col-md-12 "type="submit" name="submit" value="Login">
                         <a href="#">Forgotten Password?</a>
                         <br>

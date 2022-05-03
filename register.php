@@ -26,15 +26,15 @@ require("./functions.php");
                 <h1>Register</h1>
                 <form method="post" action="<?php register(); ?>">
                     <p>Forename</p>
-                    <input class="col-lg-12 col-md-12" type="text" name="forename" placeholder="Enter Forename">
+                    <input class="col-lg-12 col-md-12" type="text" name="forename" placeholder="Enter Forename" required>
                     <p>Surname</p>
-                    <input class="col-lg-12 col-md-12" type="text" name="surname" placeholder="Enter Surname">
+                    <input class="col-lg-12 col-md-12" type="text" name="surname" placeholder="Enter Surname" required>
                     <p>Email</p>
-                    <input class="col-lg-12 col-md-12" type="email" name="email" placeholder="Enter Email">
+                    <input class="col-lg-12 col-md-12" type="email" name="email" placeholder="Enter Email" required>
                     <p>Password</p>
-                    <input class="col-lg-12 col-md-12" type="password" name="password" placeholder="Enter Password">
+                    <input class="col-lg-12 col-md-12" type="password" name="password" placeholder="Enter Password" required>
                     <p>Repeat Password</p>
-                    <input class="col-lg-12 col-md-12" type="password" name="password2" placeholder="Enter Password">
+                    <input class="col-lg-12 col-md-12" type="password" name="password2" placeholder="Enter Password" required>
                     <p>Subscription</p>
                     <label for="subscription">
                         <input type="radio" name="subscription" checked="checked" value="0" onclick="hideCardDetailsForm();">Basic
