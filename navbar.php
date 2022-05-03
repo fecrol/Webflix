@@ -26,7 +26,6 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="./user-account.php">Account</a></li>
-                        <li><a class="dropdown-item" href="#">Transaction History</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
