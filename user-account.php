@@ -16,6 +16,7 @@ $cardDetails = getCardDetails($userId);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/48b1b4cd52.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles.css">
     <script src="./js/script.js"></script>
     <title>Account</title>
@@ -37,6 +38,8 @@ $cardDetails = getCardDetails($userId);
                 </div>
                 <div class="user-info-card-footer">
                     <p>Registered on: <span><?php echo $userInfo["dateOfReg"]; ?></span></p>
+                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#password"><i class="fa fa-edit"></i>  Change Password</button>
+                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#subscription"><i class="fa fa-edit"></i>  Change Subscription</button>
                 </div>
             </div>
 
@@ -45,12 +48,11 @@ $cardDetails = getCardDetails($userId);
                     <h1>Card Details</h1>
                 </div>
                 <div class="card-info-card-content">
+                    <h2>Card Holder: <span><?php echo $userInfo["firstName"] . " " . $userInfo["lastName"]; ?></span></h2>
                     <h2>Card Number: <span><?php echo $cardDetails["cardNumber"]; ?></span></h2>
                     <h2>Expiry Date: <span><?php echo $cardDetails["expMonth"] . "/" . $cardDetails["expYear"]; ?></span></h2>
                     <h2>CVV: <span><?php echo $cardDetails["cvv"]; ?></span></h2>
-                </div>
-                <div class="card-info-card-footer">
-
+                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#card"><i class="fa fa-credit-card"></i>  Update Card</button>
                 </div>
             </div>
         </div>
