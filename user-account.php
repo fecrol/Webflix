@@ -4,6 +4,8 @@ require("./functions.php");
 redirect();
 $userId = $_SESSION["user_id"];
 $userInfo = getUserDetails($userId);
+$subscription = translateSubscription($userInfo["premium"]);
+$cardDetails = getCardDetails($userId);
 ?>
 
 <!DOCTYPE html>
@@ -21,20 +23,20 @@ $userInfo = getUserDetails($userId);
 <body>
     <?php require("./navbar.php"); ?>
 
-    <div class="flex-container">
+    <div id="flex-container-centre" class="flex-container">
         <div class="user-info">
             <div class="user-info-card">
                 <div class="user-info-card-header">
                     <h1>Your Details</h1>
                 </div>
                 <div class="user-info-card-content">
-                    <h2>Forename: </h2>
-                    <h2>Surname: </h2>
-                    <h2>Email: </h2>
-                    <h2>Subscription: </h2>
+                    <h2>Forename: <span><?php echo $userInfo["firstName"]; ?></span></h2>
+                    <h2>Surname: <span><?php echo $userInfo["lastName"]; ?></span></h2>
+                    <h2>Email: <span><?php echo $userInfo["email"]; ?></span></h2>
+                    <h2>Subscription: <span><?php echo $subscription; ?></span></h2>
                 </div>
                 <div class="user-info-card-footer">
-                    <p>Registered on: </p>
+                    <p>Registered on: <span><?php echo $userInfo["dateOfReg"]; ?></span></p>
                 </div>
             </div>
 
@@ -43,9 +45,9 @@ $userInfo = getUserDetails($userId);
                     <h1>Card Details</h1>
                 </div>
                 <div class="card-info-card-content">
-                    <h2>Card Number: </h2>
-                    <h2>Expiry Date: </h2>
-                    <h2>CVV: </h2>
+                    <h2>Card Number: <span><?php echo $cardDetails["cardNumber"]; ?></span></h2>
+                    <h2>Expiry Date: <span><?php echo $cardDetails["expMonth"] . "/" . $cardDetails["expYear"]; ?></span></h2>
+                    <h2>CVV: <span><?php echo $cardDetails["cvv"]; ?></span></h2>
                 </div>
                 <div class="card-info-card-footer">
 
