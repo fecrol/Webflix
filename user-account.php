@@ -38,8 +38,8 @@ $cardDetails = getCardDetails($userId);
                 </div>
                 <div class="user-info-card-footer">
                     <p>Registered on: <span><?php echo $userInfo["dateOfReg"]; ?></span></p>
-                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#password"><i class="fa fa-edit"></i>  Change Password</button>
-                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#subscription"><i class="fa fa-edit"></i>  Change Subscription</button>
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#password"><i class="fa fa-edit"></i> Change Password </button>
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-target="#subscription"><i class="fa fa-edit"></i>  Change Subscription</button>
                 </div>
             </div>
 
@@ -52,10 +52,14 @@ $cardDetails = getCardDetails($userId);
                     <h2>Card Number: <span><?php echo $cardDetails["cardNumber"]; ?></span></h2>
                     <h2>Expiry Date: <span><?php echo $cardDetails["expMonth"] . "/" . $cardDetails["expYear"]; ?></span></h2>
                     <h2>CVV: <span><?php echo $cardDetails["cvv"]; ?></span></h2>
-                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#card"><i class="fa fa-credit-card"></i>  Update Card</button>
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#card"><i class="fa fa-credit-card"></i>  Update Card </button>
                 </div>
             </div>
         </div>
     </div>
+    <?php 
+    require("./html/change-password-modal.php");
+    require("./html/update-card-modal.php");
+    ?>
 </body>
 </html>
