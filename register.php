@@ -1,4 +1,5 @@
 <?php
+session_start();
 require("./functions.php");
 ?>
 
@@ -24,6 +25,15 @@ require("./functions.php");
             </div>
             <div class="login-form col-lg-8 col-md-8">
                 <h1>Register</h1>
+                <?php if(isset($_SESSION["regError"])) { 
+                    if($_SESSION["regError"] == true) { ?>
+                        <div style="font-size: 1.0rem;" class="font-16 alert alert-danger alert-dismissible fade show" role="alert">
+                            An error has occured. Please try again.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                <?php $_SESSION["regError"] = false;
+                        }
+                    } ?>
                 <form method="post" action="<?php register(); ?>">
                     <p>Forename</p>
                     <input class="col-lg-12 col-md-12" type="text" name="forename" placeholder="Enter Forename" required>
