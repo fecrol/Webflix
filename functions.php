@@ -191,6 +191,10 @@ function register() {
             mysqli_close($link);
             load();
         }
+        else {
+            $_SESSION["regError"] = true;
+            load("./register.php");
+        }
     }
 }
 
