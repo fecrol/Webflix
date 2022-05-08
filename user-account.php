@@ -42,19 +42,6 @@ $cardDetails = getCardDetails($userId);
                     <button type="button" class="btn btn-link" data-bs-toggle="modal" data-target="#subscription"><i class="fa fa-edit"></i>  Change Subscription</button>
                 </div>
             </div>
-
-            <div id="card-info" class="card-info-card">
-                <div class="card-info-card-header">
-                    <h1>Card Details</h1>
-                </div>
-                <div class="card-info-card-content">
-                    <h2>Card Holder: <span><?php echo $userInfo["firstName"] . " " . $userInfo["lastName"]; ?></span></h2>
-                    <h2>Card Number: <span><?php echo $cardDetails["cardNumber"]; ?></span></h2>
-                    <h2>Expiry Date: <span><?php echo $cardDetails["expMonth"] . "/" . $cardDetails["expYear"]; ?></span></h2>
-                    <h2>CVV: <span><?php echo $cardDetails["cvv"]; ?></span></h2>
-                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#card"><i class="fa fa-credit-card"></i>  Update Card </button>
-                </div>
-            </div>
         </div>
     </div>
     <?php 
