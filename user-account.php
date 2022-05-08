@@ -46,7 +46,6 @@ $cardDetails = getCardDetails($userId);
     </div>
     <?php 
     require("./html/change-password-modal.php");
-    require("./html/update-card-modal.php");
     ?>
 </body>
 </html>
