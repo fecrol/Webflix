@@ -148,9 +148,28 @@ function validateRegisterForm() {
         if(empty($_POST["cvv"])) {
             $formIsValid = false;
         }
+
+        $expMonth = $_POST["exp-month"];
+        $expYear = $_POST["exp-year"];
+        $isExpiryDateValid = validateExpiryDate($expMonth, $expYear);
+
+        if(!$isExpiryDateValid) {
+            $formIsValid = false;
+        }
     }
 
     return $formIsValid;
+}
+
+function validateExpiryDate($expiryMonth, $expiryYear) {
+    /*
+    Validates the expiry date of the card provided.
+    */
+
+    $expiryDate = $expiryMonth + $expiryYear;
+    $currentDate = date("n") + date("Y");
+    
+    return $expiryDate > $currentDate ? true : false;
 }
 
 function addDetailsToDatabase($forename, $surname, $email, $password, $subscription, $cardNum, $expMonth, $expYear, $cvv) {
