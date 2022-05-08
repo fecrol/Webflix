@@ -357,4 +357,40 @@ function translateSubscription($subscription) {
 
     return $subscription == 0 ? "Basic" : "Premium";
 }
+
+function changePassword() {
+    /*
+    Updates user password.
+    */
+
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        require("./connect_db.php");
+
+        $errors = array();
+        
+        if(isset($_POST["pass1"])) {
+            if($_POST["pass1"] == $_POST["pass2"]) {
+
+                $password = mysqli_real_escape_string($link, $_POST["pass1"]);
+                $id = $_SESSION["user_id"];
+                
+                $q = "UPDATE users SET password=SHA2('$password', 256) WHERE id=$id";
+                $r = mysqli_query($link, $q);
+                
+                mysqli_close($link);
+                load("./user-account.php");
+            }
+            else {
+                $errors[] = "Passwords do not match.";
+            }
+        }
+        else {
+            $errors[] = "Enter new password.";
+        }
+        $_SESSION["updatePassErr"] = $errors;
+        mysqli_close($link);
+        load("./user-account.php");
+    }
+}
 ?>
