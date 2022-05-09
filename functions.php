@@ -377,9 +377,6 @@ function changePassword() {
                 
                 $q = "UPDATE users SET password=SHA2('$password', 256) WHERE id=$id";
                 $r = mysqli_query($link, $q);
-                
-                mysqli_close($link);
-                load("user-account.php");
             }
             else {
                 $errors[] = "Passwords do not match.";
@@ -391,14 +388,14 @@ function changePassword() {
         
         $_SESSION["updatePassErr"] = $errors;
         mysqli_close($link);
-        load("user-account.php");
+        load("./user-account.php.php");
     }
 }
 
 function updateSubscription() {
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
-        load("user-account.php");
+        load("./user-account.php.php");
     }
 }
 ?>
