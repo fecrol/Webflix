@@ -24,23 +24,23 @@ logout();
                         <img src="./img/logo.png" alt="Webflix logo" class="logo-lg">
                     </div>
                     <div class="login-form col-lg-8 col-md-8">
-                    <h1>Login</h1>
-                    <?php
-                    if(isset($_SESSION["error"])) {
-                        include("./html/error.html");
-                    }
-                    ?>
-                    <form method="post" action="<?php login(); ?>">
-                        <p>Email</p>
-                        <input class="col-lg-12 col-md-12" type="text" name="email" placeholder="Enter Email" required>
-                        <p>Password</p>
-                        <input class="col-lg-12 col-md-12" type="password" name="password" placeholder="Enter Password" required>
-                        <input class="col-lg-12 col-md-12 "type="submit" name="submit" value="Login">
-                        <a href="#">Forgotten Password?</a>
-                        <br>
-                        <p class="sign-up-link">New to Webflix? <a href="./register.php">Sign up now</a></p>
-                    </form>
-                </div>
+                        <h1>Login</h1>
+                        <?php
+                        if(isset($_SESSION["error"])) {
+                            include("./html/error.html");
+                        }
+                        ?>
+                        <form method="post" action="<?php login(); ?>">
+                            <p>Email</p>
+                            <input class="col-lg-12 col-md-12" type="text" name="email" placeholder="Enter Email" required>
+                            <p>Password</p>
+                            <input class="col-lg-12 col-md-12" type="password" name="password" placeholder="Enter Password" required>
+                            <input class="col-lg-12 col-md-12 "type="submit" name="submit" value="Login">
+                            <a href="#">Forgotten Password?</a>
+                            <br>
+                            <p class="sign-up-link">New to Webflix? <a href="./register.php">Sign up now</a></p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
