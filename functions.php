@@ -388,14 +388,14 @@ function changePassword() {
         
         $_SESSION["updatePassErr"] = $errors;
         mysqli_close($link);
-        load("./user-account.php.php");
+        load("./user-account.php");
     }
 }
 
 function updateSubscription() {
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
-        load("./user-account.php.php");
+        load("./user-account.php");
     }
 }
 ?>
