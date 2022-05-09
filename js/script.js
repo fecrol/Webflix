@@ -64,8 +64,7 @@ function emptyCardDetailsForm() {
 }
 
 function hideCardDetailsForm() {
-    var cardDetailsForm = document.getElementById("card-details")
-    ;
+    var cardDetailsForm = document.getElementById("card-details");
     emptyCardDetailsForm();
     cardDetailsForm.style.display = "none";
 }
