@@ -377,6 +377,9 @@ function changePassword() {
                 
                 $q = "UPDATE users SET password=SHA2('$password', 256) WHERE id=$id";
                 $r = mysqli_query($link, $q);
+
+                mysqli_close($link);
+                load("./user-account.php");
             }
             else {
                 $errors[] = "Passwords do not match.";
@@ -388,13 +391,22 @@ function changePassword() {
         
         $_SESSION["updatePassErr"] = $errors;
         mysqli_close($link);
-        load("./user-account.php");
+        load("./change-password.php");
     }
 }
 
 function updateSubscription() {
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
+        require("connect_db.php");
+
+        $id = $_SESSION["user_id"];
+        $subscription = mysqli_real_escape_string($link, $_POST["subscription"]);
+
+        $q = "UPDATE users SET premium='$subscription' WHERE id=$id";
+        $r = mysqli_query($link, $q);
+
+        mysqli_close($link);
         load("./user-account.php");
     }
 }
