@@ -23,6 +23,15 @@ redirect();
     <div id="flex-container-centre" class="flex-container">
         <div class="login-form col-lg-5 col-md-8">
             <h1>Change Password</h1>
+            <?php if(isset($_SESSION["updatePassErr"])) { 
+                if(count($_SESSION["updatePassErr"]) > 0) { ?>
+                    <div style="font-size: 1.0rem;" class="font-16 alert alert-danger alert-dismissible fade show col-lg-12 col-md-12" role="alert">
+                            An error has occured. Please try again.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+        <?php $_SESSION["updatePassErr"] = array();
+                }
+              } ?>
                 <form method="post" action="<?php changePassword(); ?>">
                     <p>New Password</p>
                     <input class="col-lg-12 col-md-12" type="password" name="pass1" placeholder="New Password" required>
