@@ -393,4 +393,11 @@ function changePassword() {
         load("./user-account.php");
     }
 }
+
+function updateSubscription() {
+
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        load("./user-account.php");
+    }
+}
 ?>
