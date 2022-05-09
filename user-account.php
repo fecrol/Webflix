@@ -38,15 +38,11 @@ $cardDetails = getCardDetails($userId);
                 </div>
                 <div class="user-info-card-footer">
                     <p>Registered on: <span><?php echo $userInfo["dateOfReg"]; ?></span></p>
-                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#password"><i class="fa fa-edit"></i> Change Password </button>
-                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#subscription"><i class="fa fa-edit"></i>  Change Subscription</button>
+                    <button type="button" class="btn btn-link" onclick="window.location.href='./change-password.php'"><i class="fa fa-edit"></i> Change Password</button>
+                    <button type="button" class="btn btn-link"><i class="fa fa-edit"></i>  Change Subscription</button>
                 </div>
             </div>
         </div>
     </div>
-    <?php 
-    require("./html/change-password-modal.php");
-    require("./html/change-subscription-modal.php");
-    ?>
 </body>
 </html>
