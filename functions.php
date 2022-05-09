@@ -379,7 +379,7 @@ function changePassword() {
                 $r = mysqli_query($link, $q);
                 
                 mysqli_close($link);
-                load("./user-account.php");
+                load("user-account.php");
             }
             else {
                 $errors[] = "Passwords do not match.";
@@ -388,16 +388,17 @@ function changePassword() {
         else {
             $errors[] = "Enter new password.";
         }
+        
         $_SESSION["updatePassErr"] = $errors;
         mysqli_close($link);
-        load("./user-account.php");
+        load("user-account.php");
     }
 }
 
 function updateSubscription() {
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
-        load("./user-account.php");
+        load("user-account.php");
     }
 }
 ?>
