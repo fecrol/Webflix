@@ -1,7 +1,7 @@
 <div class="modal fade" id="password" tabindex="-1" role="dialog" aria-labelledby="password" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <form action="<?php changePassword(); ?>" method="POST">
+            <form action="<?php changePassword(); ?>" method="post">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalCenterTitle">Change Password</h5>
                 </div>
