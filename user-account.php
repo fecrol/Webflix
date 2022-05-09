@@ -39,7 +39,7 @@ $cardDetails = getCardDetails($userId);
                 <div class="user-info-card-footer">
                     <p>Registered on: <span><?php echo $userInfo["dateOfReg"]; ?></span></p>
                     <button type="button" class="btn btn-link" onclick="window.location.href='./change-password.php'"><i class="fa fa-edit"></i> Change Password</button>
-                    <button type="button" class="btn btn-link"><i class="fa fa-edit"></i>  Change Subscription</button>
+                    <button type="button" class="btn btn-link" onclick="window.location.href='./change-subscription.php'"><i class="fa fa-edit"></i>  Change Subscription</button>
                 </div>
             </div>
         </div>
