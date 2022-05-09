@@ -3,7 +3,7 @@
         <div class="modal-content">
             <form action="" method="post">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Change Password</h5>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Change Subscription</h5>
                 </div>
                 <div class="modal-body">
                     <p>Subscription</p>
