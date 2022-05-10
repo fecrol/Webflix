@@ -333,23 +333,6 @@ function getUserDetails($userId) {
     return $row;
 }
 
-function getCardDetails($userId) {
-    /*
-    Gets user card details from database to be displayed on user account page.
-    */
-
-    require("./connect_db.php");
-    
-    $q = "SELECT cardNumber, expMonth, expYear, cvv FROM users WHERE id=$userId";
-    $r = mysqli_query($link, $q);
-
-    $row = mysqli_fetch_assoc($r);
-
-    mysqli_close($link);
-
-    return $row;
-}
-
 function translateSubscription($subscription) {
     /*
     Translates subscription type from an integer into a string
