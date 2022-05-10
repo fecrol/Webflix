@@ -66,10 +66,22 @@ function emptyCardDetailsForm() {
 function hideCardDetailsForm() {
     var cardDetailsForm = document.getElementById("card-details");
     emptyCardDetailsForm();
+    
+    var cardNum = document.getElementById("card-num");
+    var cvv = document.getElementById("cvv");
+
+    cardNum.removeAttribute("required");
+    cvv.removeAttribute("required");
+
     cardDetailsForm.style.display = "none";
 }
 
 function showCardDetailsForm() {
     var cardDetailsForm = document.getElementById("card-details");
+    var cardNum = document.getElementById("card-num");
+    var cvv = document.getElementById("cvv");
+
     cardDetailsForm.style.display = "block";
+    cardNum.setAttribute("required", "");
+    cvv.setAttribut("required", "");
 }
