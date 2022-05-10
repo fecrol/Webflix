@@ -172,10 +172,10 @@ function validateExpiryDate($expiryMonth, $expiryYear) {
     return $expiryDate > $currentDate ? true : false;
 }
 
-function addDetailsToDatabase($forename, $surname, $email, $password, $subscription, $cardNum, $expMonth, $expYear, $cvv) {
+function addDetailsToDatabase($forename, $surname, $email, $password, $subscription, $status) {
     require("./connect_db.php");
 
-    $q = "INSERT INTO users (firstName, lastName, email, password, premium, cardNumber, expMonth, expYear, cvv, dateOfReg) VALUES ('$forename', '$surname', '$email', SHA2('$password', 256), $subscription, '$cardNum', $expMonth, $expYear, $cvv, NOW())";
+    $q = "INSERT INTO users (firstName, lastName, email, password, premium, userStatus, dateOfReg) VALUES ('$forename', '$surname', '$email', SHA2('$password', 256), $subscription, $status, NOW())";
 
     $r = mysqli_query($link, $q);
 
@@ -194,19 +194,9 @@ function register() {
             $email = mysqli_real_escape_string($link, $_POST["email"]);
             $password = mysqli_real_escape_string($link, $_POST["password"]);
             $subscription = mysqli_real_escape_string($link, $_POST["subscription"]);
-            $cardNum = 0;
-            $expMonth = 0;
-            $expYear = 0;
-            $cvv = 0;
+            $status = "0";
 
-            if($_POST["subscription"] == 1) {
-                $cardNum = mysqli_real_escape_string($link, $_POST["card_no"]);
-                $expMonth = mysqli_real_escape_string($link, $_POST["exp-month"]);
-                $expYear = mysqli_real_escape_string($link, $_POST["exp-year"]);
-                $cvv = mysqli_real_escape_string($link, $_POST["cvv"]);
-            }
-
-            addDetailsToDatabase($forename, $surname, $email, $password, $subscription, $cardNum, $expMonth, $expYear, $cvv);
+            addDetailsToDatabase($forename, $surname, $email, $password, $subscription, $status);
             mysqli_close($link);
             load();
         }
