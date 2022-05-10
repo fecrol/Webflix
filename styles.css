@@ -340,40 +340,16 @@ input:-webkit-autofill {
   color: #777777;
 }
 
-.card-info-card {
-  background: #111111;
+#genre {
   margin: 1rem;
-  padding: 1.5rem;
-  width: 100%;
-}
-
-.card-info-card h1 {
-  border-bottom: 2px solid #eeeeee;
-  padding-bottom: 0.5rem;
-  font-size: 2.4rem;
-}
-
-.card-info-card h2 {
-  font-size: 1.6rem;
-  padding-top: 0.5rem;
-}
-
-.card-info-card h2 span {
-  font-weight: normal;
-  color: #777777;
-}
-
-.modal-content {
-  background: #111111;
-}
-
-.modal-body p {
-  font-size: 1.4rem;
-}
-
-.modal-body select {
-  font-size: 1.2rem;
+  margin-top: 2rem;
   padding: 0.5rem;
+  font-size: 1.4rem;
+  color: #eeeeee;
+  background-color: #111111;
+  border: none;
+  border-bottom: 1px solid #eeeeee;
+  outline: none;
 }
 
 /* Mobile layout */
