@@ -5,7 +5,6 @@ redirect();
 $userId = $_SESSION["user_id"];
 $userInfo = getUserDetails($userId);
 $subscription = translateSubscription($userInfo["premium"]);
-$cardDetails = getCardDetails($userId);
 ?>
 
 <!DOCTYPE html>
