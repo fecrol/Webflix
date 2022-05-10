@@ -123,7 +123,8 @@ function validateRegisterForm() {
     if(empty($_POST["surname"])) {
         $formIsValid = false;
     }
-    if(empty($_POST["email"])) {
+    if(empty($_POST["email"]) || $_POST["email"] == "	
+    admin@webflix.com") {
         $formIsValid = false;
     }
     if(checkIfEmailRegistered($_POST["email"])) {
