@@ -1,0 +1,22 @@
+{
+  "name": "gu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fecrol/Webflix.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fecrol/Webflix/issues"
+  },
+  "homepage": "https://github.com/fecrol/Webflix#readme",
+  "devDependencies": {
+    "cypress": "^9.6.1"
+  }
+}
