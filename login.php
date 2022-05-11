@@ -38,7 +38,7 @@ logout();
                             <input class="col-lg-12 col-md-12 "type="submit" id="submit" name="submit" value="Login">
                             <a href="#">Forgotten Password?</a>
                             <br>
-                            <p class="sign-up-link">New to Webflix? <a href="./register.php">Sign up now</a></p>
+                            <p class="sign-up-link">New to Webflix? <a id="reg-page-link" href="./register.php">Sign up now</a></p>
                         </form>
                     </div>
                 </div>
