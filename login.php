@@ -32,10 +32,10 @@ logout();
                         ?>
                         <form method="post" action="<?php login(); ?>">
                             <p>Email</p>
-                            <input class="col-lg-12 col-md-12" type="text" name="email" placeholder="Enter Email" required>
+                            <input class="col-lg-12 col-md-12" type="email" id="email" name="email" placeholder="Enter Email" required>
                             <p>Password</p>
-                            <input class="col-lg-12 col-md-12" type="password" name="password" placeholder="Enter Password" required>
-                            <input class="col-lg-12 col-md-12 "type="submit" name="submit" value="Login">
+                            <input class="col-lg-12 col-md-12" type="password" id="password" name="password" placeholder="Enter Password" required>
+                            <input class="col-lg-12 col-md-12 "type="submit" id="submit" name="submit" value="Login">
                             <a href="#">Forgotten Password?</a>
                             <br>
                             <p class="sign-up-link">New to Webflix? <a href="./register.php">Sign up now</a></p>
