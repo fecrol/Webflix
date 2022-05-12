@@ -83,5 +83,5 @@ function showCardDetailsForm() {
 
     cardDetailsForm.style.display = "block";
     cardNum.setAttribute("required", "");
-    cvv.setAttribut("required", "");
+    cvv.setAttribute("required", "");
 }
