@@ -27,7 +27,7 @@ require("./functions.php");
                 <h1>Register</h1>
                 <?php if(isset($_SESSION["regError"])) { 
                     if($_SESSION["regError"] == true) { ?>
-                        <div style="font-size: 1.0rem;" class="font-16 alert alert-danger alert-dismissible fade show" role="alert">
+                        <div style="font-size: 1.0rem;" id="error" class="font-16 alert alert-danger alert-dismissible fade show" role="alert">
                             An error has occured. Please try again.
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
@@ -47,10 +47,10 @@ require("./functions.php");
                     <input class="col-lg-12 col-md-12" type="password" name="password2" placeholder="Enter Password" required>
                     <p>Subscription</p>
                     <label for="subscription">
-                        <input type="radio" name="subscription" checked="checked" value="0" onclick="hideCardDetailsForm();">Basic
+                        <input type="radio" name="subscription" id="basic" checked="checked" value="0" onclick="hideCardDetailsForm();">Basic
                     </label>
                     <label for="subscription">
-                        <input type="radio" name="subscription" value="1" onclick="showCardDetailsForm();">Premium (£99.99 p.a.)
+                        <input type="radio" name="subscription" id="premium" value="1" onclick="showCardDetailsForm();">Premium (£99.99 p.a.)
                     </label>
                     <div id="card-details">
                         <p>Card Number</p>
@@ -74,7 +74,7 @@ require("./functions.php");
                         <p>CVV</p>
                         <input class="col-lg-12 col-md-12" id="cvv" type="text" name="cvv" placeholder="Security Code (CVV)">
                     </div>
-                    <input class="col-lg-12 col-md-12" type="submit" name="register" value="Register">
+                    <input class="col-lg-12 col-md-12" id="submit" type="submit" name="register" value="Register">
                     <p class="sign-up-link">Already have an account? <a href="login.php">Sign in here</a></p>
                 </form>
             </div>
