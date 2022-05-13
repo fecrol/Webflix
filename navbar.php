@@ -11,10 +11,10 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="./home.php">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="movies">
                     <a class="nav-link" href="./movies.php">Movies</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="tv-shows">
                     <a class="nav-link" href="./tv-shows.php">TV Shows</a>
                 </li>
             </ul>
@@ -29,7 +29,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="login.php" class="nav-link">Logout</a>
+                    <a href="login.php" id="logout" class="nav-link">Logout</a>
                 </li>
             </ul>
         </div>
