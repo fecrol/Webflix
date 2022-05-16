@@ -47,7 +47,7 @@ function getUserInfo($email, $password) {
 
     require("connect_db.php");
 
-    $q = "SELECT id, firstName, lastName FROM users WHERE email='$email' AND password=SHA2('$password', 256)";
+    $q = "SELECT id, firstName, lastName, userStatus FROM users WHERE email='$email' AND password=SHA2('$password', 256)";
     $r = mysqli_query($link, $q);
 
     $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
@@ -87,8 +87,9 @@ function login() {
         $emailVal = validateEmail($email);
         $passwordVal = validatePassword($email, $password);
 
-        if($emailVal && $passwordVal) {
-            $userInfo = getUserInfo($email, $password);
+        $userInfo = getUserInfo($email, $password);
+
+        if($emailVal && $passwordVal && !$userInfo["userStatus"]) {
 
             $_SESSION["user_id"] = $userInfo["id"];
             $_SESSION["firstName"] = $userInfo["firstName"];
@@ -313,7 +314,7 @@ function getUserDetails($userId) {
 
     require("./connect_db.php");
 
-    $q = "SELECT firstName, lastName, email, premium, dateOfReg FROM users WHERE id=$userId";
+    $q = "SELECT * FROM users WHERE id=$userId";
     $r = mysqli_query($link, $q);
 
     $row = mysqli_fetch_assoc($r);
@@ -381,6 +382,16 @@ function updateSubscription() {
 
         mysqli_close($link);
         load("./user-account.php");
+    }
+}
+
+function logoutIfBlocked($userId) {
+    
+    $userDetails = getUserDetails($userId);
+
+    if($userDetails["userStatus"]) {
+        logout();
+        redirect();
     }
 }
 ?>
