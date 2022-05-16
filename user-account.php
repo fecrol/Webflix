@@ -2,6 +2,7 @@
 session_start();
 require("./functions.php");
 redirect();
+logoutIfBlocked($_SESSION["user_id"]);
 $userId = $_SESSION["user_id"];
 $userInfo = getUserDetails($userId);
 $subscription = translateSubscription($userInfo["premium"]);
